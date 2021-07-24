@@ -6,7 +6,10 @@ const app = express();
 const cookieParser = require("cookie-parser");
 const cors = require("cors");
 
+// MY ROUTES
+
 const authRoutes = require("./routes/auth");
+const userRoutes = require("./routes/user");
 
 // DB connection
 
@@ -29,7 +32,7 @@ app.use(cors());
 // My Routes
 
 app.use("/api", authRoutes);
-
+app.use("/api", userRoutes);
 // PORT
 
 const port = process.env.PORT || 8000;
